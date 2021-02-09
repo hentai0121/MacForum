@@ -1,0 +1,99 @@
+li.type{
+  width: 22%;
+}
+
+.job_board {
+	width: 768px;
+}
+
+ul.options li {
+  display: inline;
+  list-style-type: none;
+  margin: 0;
+  margin-left: 10px;
+}
+
+ul.options li {
+  display: inline;
+  list-style-type: none;
+  margin: 0;
+  margin-left: 10px;
+}
+  
+ul.options {
+  display: flex;
+  width: 100%;
+  margin: 0px;
+  margin-bottom: 10px;
+  float: left;
+}
+  
+.MuiFormControl-fullWidth {
+  width: 100%;
+}
+.MuiFormControl-root.MuiTextField-root.MuiFormControl-marginNormal {
+  margin: 0px;
+  padding:0px;
+  margin-right: 20px;
+}
+  
+.MuiFormControl-root {
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+.MuiGridListTile-tile{
+  background-color: #E6F2FF;
+  margin:2px;
+}
+.thumbIcons{
+  color: #1D344D;
+}
+
+#thumbDown{
+  margin: 9px 9px 0px 9px;
+}
+
+#thumbUp{
+  margin: 9px 9px 0px 9px;
+}
+
+#jobTitle{
+  padding-left: 20px;
+  padding-top: 10px;
+  font-weight: bolder;
+  color: #1D344D;
+  margin-bottom: 15px;
+}
+
+#location, #contact, #postDate, #type, #salary{
+  font-weight: normal;
+  color: #1D344D;
+  margin-left: 20px;
+}
+
+#jobTitleOnly{
+  font-weight: bold;
+  color: #1D344D;
+  margin-left: 20px;
+  margin-top: 15px;
+}
+
+#jobDescription{
+  font-weight: bold;
+  color: #1D344D;
+  margin-left: 20px;
+}
+
+.numbersdisplay{
+  font-size: 14px;
+  font-weight: bold;
+  color: #1D344D;
+}
+
+#likes{
+  margin-left: 24px;
+}
+#dislikes{
+  margin-left: 68px;
+}

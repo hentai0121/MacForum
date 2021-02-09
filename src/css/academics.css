@@ -1,0 +1,120 @@
+.w_title{
+	margin-top:10px;
+	width:100%;
+	display: inline-block;
+}
+.w_title_text{
+	font-size: 24px;
+	font-weight: bold;
+	padding: 15px;
+	float: left;
+}
+.w_btn{
+	float:right;
+	margin: 15px;
+}
+
+.latest_workshop{
+	margin-bottom: 10px;
+  	width: 100%;
+  	display: inline-block;
+}
+.lw_title{
+	padding-left:15px;
+	font-size: 18px;
+}
+.lw_container{
+  margin-left: 15px;
+  float:left;
+}
+.lw_text{
+	font-size: 12px;
+	text-align: center;
+	text-decoration: underline;
+}
+
+
+ul.options li.calendar{
+  display: inline;
+  list-style-type: none;
+  margin: 0;
+  margin-left: 15px;
+  width: 150px;
+  float: left;
+}
+
+ul.options li.academics_sort {
+	display: inline;
+	float: left;
+	width: 90px;
+	margin-left: 317px;
+}
+
+.white_background {
+	background-color: #FFF;
+}
+
+ul.options {
+  display: inline-block;
+  padding: 0;
+  width: 100%;
+  margin: 0px;
+  margin-bottom: 1px;
+  float: left;
+}
+
+
+.MuiFormControl-root.MuiTextField-root.MuiFormControl-marginNormal {
+	margin: 0px;
+	padding:0px;
+	width: 100%;
+	margin-right: 10px;
+}
+
+.MuiFormControl-root {
+	margin-left: 100px;
+	margin-right: 100px;
+	width: 100px;
+}
+.workshop_content{
+	width:100%;
+	display: inline-block;
+	margin-top: 1px;
+}
+.workshop_item{
+	width:738px;
+	margin-bottom: 5px;
+	margin-left: 15px;
+	float: left;
+	display: inline-block;
+}
+
+.item_title{
+	padding:15px;
+	font-weight: bold;
+	float: left;
+	width:50%;
+	overflow: hidden;
+	text-decoration: underline;
+}
+
+.item_desc{
+	width: 90%;
+	padding-left: 15px;
+	padding-bottom: 15px;
+	float: left;
+	overflow: hidden;
+}
+.join_btn{
+	margin: 15px;
+	float: right;
+	width: ;
+}
+.item_date{
+	margin-right: 15px;
+	float: right;
+	margin-bottom: 3px;
+}
+.search_result{
+	display: none;
+}

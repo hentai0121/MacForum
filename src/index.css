@@ -1,0 +1,163 @@
+body {
+  background-color: #FFF;
+  margin: 0;
+}
+* {
+  font-family: 'Roboto', sans-serif;
+}
+
+ul.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+ul.header li {
+  display: inline;
+  list-style-type: none;
+  margin: 0;
+}
+ul.header {
+  background-color: #1D344D;
+  padding: 0;
+  width: 100%;
+}
+ul.header li a {
+  color: #E6E6E6;
+  width: 70px;
+  text-decoration: none;
+  padding: 20px;
+  display: inline-block;
+  text-align: center;
+}
+ul.header li:hover > a {
+  color: #FFF;
+}
+ul.header li > a.active {
+  color: #FFF;
+  font-weight: bold;
+}
+ul.header li img {
+  height: 40px;
+  padding: 10px;
+  display: inline-block;
+  float: left;
+  margin-right: 40px;
+}
+ul.header li .AccessibleOutlinedIcon {
+  color: #FFF;
+  height: 25px;
+  display: inline-block;
+  float: right;
+  margin-left: 25px;
+}
+
+.content {
+  background-color: #FFF;
+  margin-left: auto;
+  margin-right: auto;
+  border-style: solid;
+  border-color: #E6E6E6;
+  border-width: 1px;
+  width: 768px;
+}
+.content h2 {
+  padding: 0;
+  margin: 0;
+}
+.content li {
+  margin-bottom: 10px;
+}
+
+.accessibility_pop {
+  width: 220px;
+  height: 150px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: yellow;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #FFF;
+  padding: 10px;
+}
+
+label.MuiFormControlLabel-root {
+  float: left;
+  width: 400px;
+}
+
+/*accessibility*/
+.colorblind {
+  -webkit-filter: grayscale(100%);
+  -moz-filter: grayscale(100%);
+  -ms-filter: grayscale(100%);
+  filter: grayscale(100%);
+}
+
+
+/*colors*/
+.blue_heavy_background {
+  background-color: #1D344D
+}
+
+.blue_heavy_text {
+  color: #1D344D
+}
+
+.blue_medium_background {
+  background-color: #84A1C1;
+}
+
+.blue_medium_text {
+  color: #84A1C1;
+}
+
+.blue_light_background {
+  background-color: #E6F2FF;
+}
+
+.blue_light_text {
+  color: #E6F2FF;
+}
+
+.grey_light_background {
+  background-color: #E6E6E6;
+}
+
+.grey_light_text {
+  color: #E6E6E6;
+}
+
+/*text size*/
+.activity_normal_title {
+  font-size: 16px;
+}
+
+.activity_normal_content {
+  font-size: 12px;
+}
+
+.activity_accessibility_title {
+  font-size: 18px;
+}
+
+.activity_accessibility_content {
+  font-size: 14px;
+}
+
+.normal_title {
+  font-size: 19px;
+}
+
+.normal_content {
+  font-size: 16px;
+}
+
+.accessibility_title {
+  font-size: 21px;
+}
+
+.accessibility_content {
+  font-size: 18px;
+}

@@ -1,0 +1,24 @@
+.pt{
+  
+  max-width:360px;
+  max-height:270px;
+  width: auto;
+  height: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+}
+
+.petition{
+  display: flex;
+  justify-content: flex-start;
+}
+
+.sign{
+  display: flex;
+  justify-content: flex-start;
+}
+
+.filter{
+	font-size: 15px;
+}
