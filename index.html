@@ -1,0 +1,126 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Socket.IO chat</title>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      .fonto {
+        font: 300 100px/1.3 'Lobster Two', Helvetica, sans-serif;
+        color: #d4d9ff;
+        text-shadow: 1px 1px 0px #ededed, 4px 4px 0px rgba(0,0,0,0.15);
+        display: inline-block;
+      }
+
+      .msg_card_body{
+			     overflow-y: auto;
+		  }
+      .card{
+          margin-top: auto;
+    			margin-bottom: auto;
+			    height: 500px;
+			    border-radius: 15px !important;
+			    background-color: rgba(0,0,0,0.4) !important;
+
+    			overflow-y: auto;
+    			white-space: normal;
+  		}
+      .msg_cotainer_send{
+          right:0;
+		      margin-top: auto;
+		      margin-bottom: auto;
+      		margin-right: 10px;
+      		border-radius: 25px;
+      		background-color: #e9e9f5;
+      		padding: 10px;
+      		position: relative;
+
+	    }
+      .msg_cotainer{
+        margin-top: auto;
+    		margin-bottom: auto;
+    		margin-left: 10px;
+    		border-radius: 25px;
+    		background-color: #a7a7b5;
+    		padding: 10px;
+    		position: relative;
+    	}
+      .msg_name{
+		      position: absolute;
+    		left: 0;
+    		bottom: -15px;
+    		color: rgba(255,255,255,0.5);
+    		font-size: 10px;
+    	}
+
+      body,html {
+        font: 13px Helvetica, Arial;
+        height: 100%;
+  			margin: 0;
+        width: 100%;
+      }
+      form { background: #000; padding: 3px; position: fixed; bottom: 0; width: 100%; }
+      form input { border: 0; padding: 10px; width: 90%; margin-right: .5%; }
+      form button { width: 9%; background: rgb(143, 143, 143); border: none; padding: 10px; }
+      form button:hover { width: 9%; background: rgb(166, 166, 166); border: none; padding: 10px; }
+
+    </style>
+    <link href='http://fonts.googleapis.com/css?family=Lobster+Two' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  </head>
+  <body style="background-color:#1f1f26;">
+    <nav class="navbar navbar-dark bg-dark">
+      <h3 class="fonto">MaChat</h3>
+       <button type="submit" class="btn btn-danger"><b>Quit the Room</b></button>
+    </nav>
+    <div id="temp1" style="display:block">
+      <input id="username" autocomplete="off" /><button id="submituser">submit</button>
+    </div>
+    <div id="temp2" style="display:none">
+    <!-- ul id="messages"></ul -->
+    <div class="card"><div class="card-body msg_card_body" id="messages"></div></div>
+    <!--  -->
+    <form id="chat" action="">
+      <input id="message" autocomplete="off" /><button><b>Send</b></button>
+    </form>
+    </div>
+  <script src="socket.io/socket.io.js"></script>
+  <script>
+
+  // Create a socket connection (with the server that sent this file)
+  var socket = io();
+  var username = "  ";//////////////////////////////////////
+  document.getElementById("submituser").onclick = function() {
+    username = document.getElementById("username").value;
+    document.getElementById("temp1").style.display = "none";
+    document.getElementById("temp2").style.display = "block";
+  }
+  // when the form is submitted, send a chat message
+  document.getElementById("chat").onsubmit = function()
+  {
+    // send a message to the server using socket.emit, call the message
+    // "chat message" and give it the content of the chat input textbox
+    //socket.emit('chat message', document.getElementById("message").value );
+    console.log(username);
+    console.log(document.getElementById("message").value);
+    socket.emit('chat message', {'usr': username, 'msg': document.getElementById("message").value} );
+    // set the input textbox to blank after the message is sent
+    document.getElementById("message").value = "";
+
+    // stop the default action of the form submit from occurring
+    return false;
+  }
+
+  // listen of "chat message" on the client side, when one is received, append
+  // the message to the list of chat messages
+  socket.on('chat message', function({usr,msg}){
+    if(usr==username) {
+      document.getElementById("messages").innerHTML += '<div class="d-flex justify-content-end mb-4"><div class="msg_cotainer_send"><h5>' + msg + '</h5><span class="msg_name">' + usr + '</span></div></div>';
+    } else {
+      document.getElementById("messages").innerHTML += '<div class="d-flex justify-content-start mb-4"><div class="msg_cotainer"><h5>' + msg + '</h5><span class="msg_name">' + usr + '</span></div></div>';
+    }
+    //document.getElementById("messages").innerHTML += "<li>" + msg + "</li>";
+  });
+
+  </script>
+  </body>
+</html>
