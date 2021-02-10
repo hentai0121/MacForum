@@ -8,7 +8,7 @@ import Jobboard from "./Jobboard";
 import Changemac from "./Changemac";
 
 import "./index.css";
-import logo from './images/life-at-mac-logo-white-small.png'
+import logo from './images/logo.png'
 import AccessibleOutlinedIcon from '@material-ui/icons/AccessibleOutlined';
 
 import Modal from '@material-ui/core/Modal';
@@ -39,10 +39,9 @@ class Main extends Component {
             <li>
               <img src={logo} alt="Logo" />
             </li>
-            <li><NavLink exact to="/">Academics</NavLink></li>
-            <li><NavLink to="/activities" activeClassName="active">Activities</NavLink></li>
-            <li><NavLink to="/forum">Forum</NavLink></li>
-            <li><NavLink to="/job_board">JobBoard</NavLink></li>
+            
+            <li><NavLink exact to="/">Forum</NavLink></li>
+            <li><NavLink to="/chatroom">Chatroom</NavLink></li>
             <li><NavLink to="/change_mac">ChangeMac</NavLink></li>
 
             <li>
@@ -91,17 +90,12 @@ class Main extends Component {
 
           <div className="content">
             <Switch>
+              
               <Route exact path="/">
-                <Academics larger_text={this.state.larger_text}/>
-              </Route>
-              <Route path="/activities">
-                <Activities larger_text={this.state.larger_text}/>
-              </Route>
-              <Route path="/forum">
                 <Forum larger_text={this.state.larger_text}/>
               </Route>
-              <Route path="/job_board">
-                <Jobboard larger_text={this.state.larger_text}/>
+              <Route path="/chatroom">
+                <Forum larger_text={this.state.larger_text}/>
               </Route>
               <Route path="/change_mac">
                 <Changemac larger_text={this.state.larger_text}/>
