@@ -70,7 +70,8 @@
   <body style="background-color:#1f1f26;">
     <nav class="navbar navbar-dark bg-dark">
       <h3 class="fonto">MaChat</h3>
-       <button type="submit" class="btn btn-danger"><b>Quit the Room</b></button>
+       <button type="submit" class="btn btn-info" onclick="gotopaint()"><b>open paint board</b></button>
+       <button type="submit" class="btn btn-danger" onclick="gotoforum()"><b>Quit the Room</b></button>
     </nav>
     <div id="temp1" style="display:block">
       <input id="username" autocomplete="off" /><button id="submituser">submit</button>
@@ -85,7 +86,12 @@
     </div>
   <script src="socket.io/socket.io.js"></script>
   <script>
-
+  function gotopaint(){
+    location.replace("http://localhost:8080/");
+  }
+  function gotoforum(){
+    location.replace("http://localhost:3000/");
+  }
   // Create a socket connection (with the server that sent this file)
   var socket = io();
   var username = "  ";//////////////////////////////////////

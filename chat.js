@@ -55,7 +55,7 @@ io.on('connection', function(socket) {
 
 });
 
-// start the HTTP server on port 3000
-http.listen(3000, function(){
-  console.log('listening on *:3000');
+// start the HTTP server on port 3001
+http.listen(3001, function(){
+  console.log('listening on *:3001');
 });
