@@ -124,6 +124,10 @@ class Forum extends Component {
                   },
                   current_thread_state: false,
                   isTrue:false,
+                  replyContent:"",
+                  replyA: [],
+                  nextID2: 17
+                
 
                 };
   }
@@ -151,6 +155,19 @@ class Forum extends Component {
       })
     }
   } 
+
+  reply() {
+    if (this.state.replyContent.length > 0)
+      this.setState({
+        replyContent: "",
+        nextID2:this.state.nextID2+1,
+        repltA:[...this.state.replyA,
+                { replyID:this.state.nextID2,
+                  replyMessage:this.state.replyContent
+                }],
+        
+      })
+  }
   
   check_details(new_input){
     this.setState({
@@ -366,14 +383,36 @@ class Forum extends Component {
                   Content: {this.state.current_post.content}<br />
                   Author: {this.state.current_post.author}<br />
                   Type: {this.state.current_post.type}
-                </DialogContentText>
+                </DialogContentText>               
               </DialogContent>
               <DialogActions>
+                
+                <TextField
+                          label="Reply Content"
+                          placeholder="Enter content"
+                          fullWidth
+                          required
+                          multiline
+                          rows={4}
+                          margin="normal"
+                          onChange={(event)=> this.setState({replyContent:event.target.value})}
+                          value={this.state.replyContent}
+                        />
+                <Button onClick={this.reply.bind(this,this.state.replyContent)} color="primary">
+                  Reply
+                </Button>
                 <Button onClick={event => this.setState({current_thread_state:false})} color="primary">
-                  ok
+                  close
                 </Button>
               </DialogActions>
-            </Dialog>
+              <DialogContent>
+                <DialogContentText id="alert-dialog-description">
+                  Re: {this.state.replyA.replyMessage}
+                </DialogContentText>               
+              </DialogContent>
+          </Dialog>
+          
+            
 
           <ul className="forum_list">
             {toshow.map(

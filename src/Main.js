@@ -6,6 +6,9 @@ import Activities from "./Activities";
 import Forum from "./Forum";
 import Jobboard from "./Jobboard";
 import Changemac from "./Changemac";
+import LoginButton from "./loginbutton"
+import LogoutButton from "./logoutbutton"
+import Profile from "./profile"
 
 import "./index.css";
 import logo from './images/logo.png'
@@ -29,6 +32,7 @@ class Main extends Component {
     this.state = {accessibility:false, colorblind: false, larger_text: false};
   }
   render() {
+
     var accessibility_class = "";
     if (this.state.colorblind) accessibility_class="colorblind";
 
@@ -37,18 +41,20 @@ class Main extends Component {
         <div className={accessibility_class}>
           <ul className="header">
             <li>
-              <img src={logo} alt="Logo" />
+              <img className="photo" src={logo} alt="Logo" />
             </li>
             
             <li><NavLink exact to="/">Forum</NavLink></li>
             <li><NavLink to="/chatroom">Chatroom</NavLink></li>
             <li><NavLink to="/change_mac">ChangeMac</NavLink></li>
-
             <li>
               <AccessibleOutlinedIcon className="AccessibleOutlinedIcon" 
                                       onClick={event => this.setState({accessibility:true})}
               />
-            </li>
+            </li>&nbsp;&nbsp;&nbsp;
+            <li><LoginButton/></li> &nbsp;&nbsp;&nbsp;
+            <li><LogoutButton/></li>&nbsp;&nbsp;&nbsp;
+            <li><Profile/></li>
           </ul>
 
           <Dialog
@@ -100,6 +106,8 @@ class Main extends Component {
               <Route path="/change_mac">
                 <Changemac larger_text={this.state.larger_text}/>
               </Route>
+              
+              
             </Switch>
              
           </div>
